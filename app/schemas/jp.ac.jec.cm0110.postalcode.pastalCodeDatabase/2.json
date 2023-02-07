@@ -1,0 +1,58 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "27828953e8d462d02ef945f10175d5c9",
+    "entities": [
+      {
+        "tableName": "pastalCodeEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pastalCode` TEXT, `territory` TEXT, `city` TEXT, `area` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "uid",
+            "columnName": "uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pastalCode",
+            "columnName": "pastalCode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "territory",
+            "columnName": "territory",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "city",
+            "columnName": "city",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "area",
+            "columnName": "area",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '27828953e8d462d02ef945f10175d5c9')"
+    ]
+  }
+}
